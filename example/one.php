@@ -24,16 +24,16 @@ require_once("Repopulator.php");
 		    	<h1>One repeatable</h1>
 		    </div>
 
-			<form class="form1 form-horizontal" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+			<form class="form-horizontal" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
-				<fieldset class="definitions">
+				<fieldset class="todos">
 
-					<legend>Definitions</legend>
+					<legend>To Do List</legend>
 
-					<div class="repeatable"><?php Repopulator::repopulate("definitions", $_POST); ?></div>
+					<div class="repeatable"><?php Repopulator::repopulate("todos", $_POST); ?></div>
 					
 					<div class="form-group">
-						<input type="button" value="Add Definition" class="btn btn-default add" />
+						<input type="button" value="Add Todo Item" class="btn btn-default add" />
 					</div>
 
 				</fieldset>
@@ -46,16 +46,18 @@ require_once("Repopulator.php");
 
 		</div>
 
-		<script type="text/template" id="definitions">
-		<?php echo Repopulator::$templates["definitions"]; ?>
+		<script type="text/template" id="todos">
+		<?php echo Repopulator::$templates["todos"]; ?>
 		</script>
 
 		<script>
 		$(function() {
-			$(".form1 .definitions .repeatable").repeatable({
-				addTrigger: ".form1 .add",
-				template: "#definitions",
-				startWith: 1
+			$(".todos .repeatable").repeatable({
+				addTrigger: ".todos .add",
+				deleteTrigger: ".todos .delete",
+				template: "#todos",
+				startWith: 1,
+				max: 5
 			});
 		});
 		</script>
