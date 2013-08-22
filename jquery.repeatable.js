@@ -8,10 +8,11 @@
 		 */
 		var defaults = {
 			addTrigger: null,
+			deleteTrigger: null,
 			max: null,
 			startWith: 0,
 			template: null,
-			triggerEvent: "click",
+			itemContainer: ".repeatable-item",
 			onAdd: function () {},
 			onDelete: function () {}
 		};
@@ -43,7 +44,7 @@
 		 * @return null
 		 */
 		var total = function () {
-			return $(target).find(".repeatable").length;
+			return $(target).find(settings.itemContainer).length;
 		}();
 
 		
@@ -63,7 +64,7 @@
 		 * @return null
 		 */
 		var deleteOne = function () {
-			$(this).parents(".repeatable").first().remove();
+			$(this).parents(settings.itemContainer).first().remove();
 			total--;
 			maintainAddBtn();
 			settings.onDelete.call(this);
@@ -113,13 +114,16 @@
 		 * @return null
 		 */
 		(function () {
-			$(settings.addTrigger).on(settings.triggerEvent, addOne);
-			$("form").on(settings.triggerEvent, ".delete", deleteOne);
+			$(settings.addTrigger).on("click", addOne);
+			$("form").on("click", ".delete", deleteOne);
 
-			var toCreate = settings.startWith - total;
-			for (var j = 0; j < toCreate; j++) {
-				createOne();
+			if (!total) {
+				var toCreate = settings.startWith - total;
+				for (var j = 0; j < toCreate; j++) {
+					createOne();
+				}
 			}
+			
 		})();
 	};
 
