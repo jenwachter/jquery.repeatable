@@ -8,7 +8,7 @@ A jQuery plugin that allows you to easily create repeatable groups of form field
 
 #### Markup
 
-At a bare minimum, the html form should contain a container for which the repeatable items will populate and a button that when clicked, tells jquery.repeatable to add another item. The classes you use can be different than the example below.
+At a bare minimum, the html form should contain a container for which the repeatable items will populate and a button that when clicked, tells jquery.repeatable to add another item. The classes you use can be different than the example below, but make sure you register any differences when you call the plugin. See [settings](#settings) below.
 
 ```html
 <form>
@@ -56,7 +56,7 @@ $(function() {
 When a user clicks on the `.add` button, the script will render a new `.field-group` within the `.repeatable-container` div. Each `{?}` will be replaced with a unique value so that each form field remains unique in the scope of the form. If a user clicks on a `.delete` button with a group, that group will be removed from the form.
 
 
-
+<a name="settings"></a>
 ### Settings
 
 There are more options you can pass to `repeatable()` than the above example suggests.
