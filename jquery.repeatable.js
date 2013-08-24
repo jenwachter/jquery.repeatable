@@ -7,12 +7,12 @@
 		 * @type {Object}
 		 */
 		var defaults = {
-			addTrigger: null,
-			deleteTrigger: null,
+			addTrigger: ".add",
+			deleteTrigger: ".delete",
 			max: null,
 			startWith: 0,
 			template: null,
-			itemContainer: ".repeatable-item",
+			itemContainer: ".field-group",
 			onAdd: function () {},
 			onDelete: function () {}
 		};
