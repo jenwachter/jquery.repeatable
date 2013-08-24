@@ -12,8 +12,8 @@ require_once("Repopulator.php");
 
         <link rel="stylesheet" href="css/styles.css" />
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="../jquery.repeatable.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.repeatable.js"></script>
 
     </head>
     <body>
@@ -21,7 +21,7 @@ require_once("Repopulator.php");
     	<div class="container">
 
     		<div class="page-header">
-		    	<h1>Two repeatable</h1>
+		    	<h1>One repeatable</h1>
 		    </div>
 
 			<form class="form-horizontal" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -38,18 +38,6 @@ require_once("Repopulator.php");
 
 				</fieldset>
 
-				<fieldset class="people">
-
-					<legend>People</legend>
-
-					<div class="repeatable"><?php Repopulator::repopulate("people", $_POST); ?></div>
-					
-					<div class="form-group">
-						<input type="button" value="Add Person" class="btn btn-default add" />
-					</div>
-
-				</fieldset>
-				
 				<div class="form-group">
 					<input type="submit" value="Submit" class="btn btn-primary" />
 				</div>
@@ -59,29 +47,17 @@ require_once("Repopulator.php");
 		</div>
 
 		<script type="text/template" id="todos">
-		<?php echo Repopulator::$templates["todos"]; ?>
-		</script>
-
-		<script type="text/template" id="people">
-		<?php echo Repopulator::$templates["people"]; ?>
+		<?php echo Repopulator::$templates["todos_labels"]; ?>
 		</script>
 
 		<script>
 		$(function() {
 			$(".todos .repeatable").repeatable({
 				addTrigger: ".todos .add",
-				deleteTrigger: ".todos .add",
+				deleteTrigger: ".todos .delete",
 				template: "#todos",
 				startWith: 1,
 				max: 5
-			});
-
-			$(".people .repeatable").repeatable({
-				addTrigger: ".people .add",
-				deleteTrigger: ".people .add",
-				template: "#people",
-				startWith: 1,
-				max: 3
 			});
 		});
 		</script>

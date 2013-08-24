@@ -12,8 +12,8 @@ require_once("Repopulator.php");
 
         <link rel="stylesheet" href="css/styles.css" />
 
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery.repeatable.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="../jquery.repeatable.js"></script>
 
     </head>
     <body>
