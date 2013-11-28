@@ -33,7 +33,7 @@
 			
 		/**
 		 * Blend passed user settings with defauly settings
-		 * @type {[type]}
+		 * @type {array}
 		 */
 		var settings = $.extend({}, defaults, userSettings);
 		
