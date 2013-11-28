@@ -27,7 +27,7 @@ The field group template contains html for the group of form fields that will be
 * Include the symbol `{?}` when you need a unique value. You must at least include this symbol in the `name` attribute of your form fields to ensure they are all unique.
 * If you want users to be able to delete items, include a delete button in the template.
 
-```javascript
+```html
 <script type="text/template" id="people">
 <div class="field-group">
 	<label for="firstname_{?}">First name</label>
@@ -49,53 +49,25 @@ The following JavaScript can be used in conjunction with the form and template s
 ```javascript
 $(function() {
 	$("form .repeatable-container").repeatable({
-		template: #people	
+		template: "#people"	
 	});
 });
 ```
-When a user clicks on the `.add` button, the script will render a new `.field-group` within the `.repeatable-container` div. Each `{?}` will be replaced with a unique value so that each form field remains unique in the scope of the form. If a user clicks on a `.delete` button with a group, that group will be removed from the form.
+When a user clicks on the `.add` button, the script will render a new `.field-group` within the `.repeatable-container`. Each `{?}` will be replaced with a unique value so that each field is unique in the scope of the form. If a user clicks on a `.delete` button within a group, that group will be removed from the form.
 
 
 <a name="settings"></a>
 ### Settings
 
-There are more options you can pass to `repeatable()` than the above example suggests.
 
-#### addTrigger
-
-_Optional_. (string) The selector that when clicked, a new field group will be added to the repeatable item container. Default: ".add"
-
-#### deleteTrigger
-
-_Optional_. (string) The selector that when clicked, the field group the delete selector is within will be removed from the form. Default: ".delete"
-
-#### max
-
-_Optional_. (integer) The maximum number of field group elements that may be added to the repeatable item container. Defalt: null.
-
-
-#### startWith
-
-_Optional_. (integer) The number of field group elements to prepopulate the form with. Default: 0
-
-
-#### template: null
-
-_Required_. (string) The selector that contains the form field group template.
-
-
-#### itemContainer
-
-_Optional_. (string) The selector that represents each field group container. Default: ".field-group"
-
-
-#### onAdd: function () {}
-
-_Optional_. (function) A function to run after an item is added to the repeatable item container.
-
-#### onDelete: function () {}
-
-_Optional_. (function) A function to run after an item is deleted from the repeatable item container.
+* __addTrigger__: _Optional_. (string) The selector that when clicked, a new field group will be added to the repeatable item container. Default: ".add"
+* __deleteTrigger__: _Optional_. (string) The selector that when clicked, the field group the delete selector is within will be removed from the form. Default: ".delete"
+* __itemContainer__: _Optional_. (string) The selector that represents each field group container. Default: ".field-group"
+* __max__: _Optional_. (integer) The maximum number of field group elements that may be added to the repeatable item container. Defalt: null.
+* __onAdd__: _Optional_. (function) A function to run after an item is added to the repeatable item container. Default: none
+* __onDelete__: _Optional_. (function) A function to run after an item is deleted from the repeatable item container. Default: none
+* __startWith__: _Optional_. (integer) The number of field group elements to prepopulate the form with. Default: 0
+* __template__: _Required_. (string) The selector that contains the form field group template.
 
 
 
