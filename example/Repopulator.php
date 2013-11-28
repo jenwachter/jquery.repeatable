@@ -9,11 +9,15 @@ class Repopulator
 			<input type="button" class="btn btn-danger span-2 delete" value="X" />
 		</div>',
 		"todos_labels" => '<div class="field-group controls-row">
+			<div class="span6">
 			<label for="task_{?}">Task to do</label>
-			<input type="text" class="span6" name="todos[{?}][task]" value="{task}" id="task_{?}">
+			<input type="text" class="span6" name="todos_labels[{?}][task]" value="{task}" id="task_{?}">
+			</div>
+			<div class="span4">
 			<label for="duedate_{?}">Due date</label>
-			<input type="text" class="span2" name="todos[{?}][duedate]" value="{duedate}" id="duedate_{?}">
+			<input type="text" class="span2" name="todos_labels[{?}][duedate]" value="{duedate}" id="duedate_{?}">
 			<input type="button" class="btn btn-danger span-2 delete" value="X" />
+			</div>
 		</div>',
 		"people" => '<div class="field-group controls-row">
 			<input type="text" class="span4" name="people[{?}][firstname]" value="{firstname}" placeholder="First name">
