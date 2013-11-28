@@ -17,7 +17,7 @@ class Repopulator
 		</div>',
 		"people" => '<div class="field-group controls-row">
 			<input type="text" class="span4" name="people[{?}][firstname]" value="{firstname}" placeholder="First name">
-			<input type="text" class="span4 name="people[{?}][lastname]" value="{lastname}" placeholder="Last name">
+			<input type="text" class="span4" name="people[{?}][lastname]" value="{lastname}" placeholder="Last name">
 			<input type="button" class="btn btn-danger span-2 delete" value="X" />
 		</div>'
 	);
