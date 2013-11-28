@@ -27,7 +27,7 @@ The field group template contains html for the group of form fields that will be
 * Include the symbol `{?}` when you need a unique value. You must at least include this symbol in the `name` attribute of your form fields to ensure they are all unique.
 * If you want users to be able to delete items, include a delete button in the template.
 
-```javascript
+```html
 <script type="text/template" id="people">
 <div class="field-group">
 	<label for="firstname_{?}">First name</label>
