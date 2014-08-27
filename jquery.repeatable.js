@@ -115,7 +115,7 @@
 		 */
 		(function () {
 			$(settings.addTrigger).on("click", addOne);
-			$("form").on("click", ".delete", deleteOne);
+			$("form").on("click", settings.deleteTrigger, deleteOne);
 
 			if (!total) {
 				var toCreate = settings.startWith - total;
