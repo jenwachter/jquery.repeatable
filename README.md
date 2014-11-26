@@ -68,9 +68,3 @@ When a user clicks on the `.add` button, the script will render a new `.field-gr
 * __onDelete__: _Optional_. (function) A function to run after an item is deleted from the repeatable item container. Default: none
 * __startWith__: _Optional_. (integer) The number of field group elements to prepopulate the form with. Default: 0
 * __template__: _Required_. (string) The selector that contains the form field group template.
-
-
-
-### Server-side integration
-
-See file in `/example`. Docs coming soon.
