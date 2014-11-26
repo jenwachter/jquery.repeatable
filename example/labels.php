@@ -21,7 +21,7 @@ require_once("Repopulator.php");
     	<div class="container">
 
     		<div class="page-header">
-		    	<h1>One repeatable</h1>
+		    	<h1>One repeatable with labels</h1>
 		    </div>
 
 			<form class="form-horizontal" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
