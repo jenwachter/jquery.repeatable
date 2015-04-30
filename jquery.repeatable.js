@@ -51,9 +51,11 @@
 		/**
 		 * Add an element to the target
 		 * and call the callback function
+		 * @param  object e Event
 		 * @return null
 		 */
-		var addOne = function () {
+		var addOne = function (e) {
+			e.preventDefault();
 			createOne();
 			settings.onAdd.call(this);
 		};
@@ -61,9 +63,11 @@
 		/**
 		 * Delete the parent element
 		 * and call the callback function
+		 * @param  object e Event
 		 * @return null
 		 */
-		var deleteOne = function () {
+		var deleteOne = function (e) {
+			e.preventDefault();
 			$(this).parents(settings.itemContainer).first().remove();
 			total--;
 			maintainAddBtn();
