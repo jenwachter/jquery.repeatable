@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dynamic Form Groups</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="example/css/styles.css" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="jquery.repeatable.js"></script>
+
+    </head>
+    <body>
+
+    	<div class="container">
+
+    		<div class="page-header">
+		    	<h1>To Do List</h1>
+		    </div>
+
+			<form class="form-horizontal">
+
+				<fieldset class="todos_labels">
+
+					<div class="repeatable"></div>
+
+					<div class="form-group span4">
+						<input type="button" value="Add Todo Item" class="btn btn-default add" />
+					</div>
+
+				</fieldset>
+
+				<div class="form-group">
+					<input type="submit" value="Submit" class="btn btn-primary" />
+				</div>
+
+			</form>
+
+		</div>
+
+		<script type="text/template" id="todos_labels">
+      <div class="field-group controls-row">
+  			<div class="span6">
+  			<label for="task_{?}">Task to do</label>
+  			<input type="text" class="span6" name="todos_labels[{?}][task]" value="{task}" id="task_{?}">
+  			</div>
+  			<div class="span4">
+  			<label for="duedate_{?}">Due date</label>
+  			<input type="text" class="span2" name="todos_labels[{?}][duedate]" value="{duedate}" id="duedate_{?}">
+  			<input type="button" class="btn btn-danger span-2 delete" value="X" />
+  			</div>
+  		</div>
+		</script>
+
+		<script>
+		$(function() {
+			$(".todos_labels .repeatable").repeatable({
+				addTrigger: ".todos_labels .add",
+				deleteTrigger: ".todos_labels .delete",
+				template: "#todos_labels",
+				startWith: 1,
+				max: 5
+			});
+		});
+		</script>
+
+    </body>
+</html>
