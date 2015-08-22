@@ -1,6 +1,6 @@
 # jquery.repeatable.js
 
-A jQuery plugin that allows you to easily create repeatable groups of form fields.
+A jQuery plugin that allows you to easily create repeatable groups of form fields. [See it in action.](http://jenwachter.com/jquery.repeatable/)
 
 
 
@@ -49,7 +49,7 @@ The following JavaScript can be used in conjunction with the form and template s
 ```javascript
 $(function() {
 	$("form .repeatable-container").repeatable({
-		template: "#people"	
+		template: "#people"
 	});
 });
 ```
