@@ -14,9 +14,9 @@
 			template: null,
 			itemContainer: ".field-group",
 			beforeAdd: function () {},
-			onAdd: function () {},
+			afterAdd: function () {},
 			beforeDelete: function () {},
-			onDelete: function () {}
+			afterDelete: function () {}
 		};
 
 		/**
@@ -60,7 +60,7 @@
 			e.preventDefault();
 			settings.beforeAdd.call(this);
 			createOne();
-			settings.onAdd.call(this);
+			settings.afterAdd.call(this);
 		};
 
 		/**
@@ -75,7 +75,7 @@
 			$(this).parents(settings.itemContainer).first().remove();
 			total--;
 			maintainAddBtn();
-			settings.onDelete.call(this);
+			settings.afterDelete.call(this);
 		};
 
 		/**
