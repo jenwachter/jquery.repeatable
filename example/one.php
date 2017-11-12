@@ -31,7 +31,7 @@ require_once("Repopulator.php");
 					<legend>To Do List</legend>
 
 					<div class="repeatable"><?php Repopulator::repopulate("todos", $_POST); ?></div>
-					
+
 					<div class="form-group">
 						<input type="button" value="Add Todo Item" class="btn btn-default add" />
 					</div>
@@ -56,7 +56,7 @@ require_once("Repopulator.php");
 				addTrigger: ".todos .add",
 				deleteTrigger: ".todos .delete",
 				template: "#todos",
-				startWith: 1,
+				min: 2,
 				max: 5
 			});
 		});
