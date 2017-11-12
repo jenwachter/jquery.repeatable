@@ -64,9 +64,9 @@ When a user clicks on the `.add` button, the script will render a new `.field-gr
 * __deleteTrigger__: _Optional_. (string) The selector that when clicked, the field group the delete selector is within will be removed from the form. Default: ".delete"
 * __itemContainer__: _Optional_. (string) The selector that represents each field group container. Default: ".field-group"
 * __max__: _Optional_. (integer) The maximum number of field group elements that may be added to the repeatable item container. Default: null.
+* __min__: _Optional_. (integer) The minimum number of field group elements that may be present in the repeatable item container. The form is prepopulated with this amount of field group elements. Default: 0.
 * __beforeAdd__: _Optional_. (function) A function to run before an item is added to the repeatable item container. Default: none
 * __afterAdd__: _Optional_. (function) A function to run after an item is added to the repeatable item container. Default: none
 * __beforeDelete__: _Optional_. (function) A function to run before an item is deleted from the repeatable item container. Default: none
 * __afterDelete__: _Optional_. (function) A function to run after an item is deleted from the repeatable item container. Default: none
-* __startWith__: _Optional_. (integer) The number of field group elements to prepopulate the form with. Default: 0
 * __template__: _Required_. (string) The selector that contains the form field group template.

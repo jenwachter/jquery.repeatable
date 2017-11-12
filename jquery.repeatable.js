@@ -10,7 +10,7 @@
 			addTrigger: ".add",
 			deleteTrigger: ".delete",
 			max: null,
-			startWith: 0,
+      min: 0,
 			template: null,
 			itemContainer: ".field-group",
 			beforeAdd: function () {},
@@ -25,20 +25,20 @@
 		 * @type {Number}
 		 */
 		var i = 0;
-		
+
 		/**
 		 * DOM element into which repeatable
 		 * items will be added
 		 * @type {jQuery object}
 		 */
 		var target = $(this);
-			
+
 		/**
 		 * Blend passed user settings with defauly settings
 		 * @type {array}
 		 */
 		var settings = $.extend({}, defaults, userSettings);
-		
+
 		/**
 		 * Total templated items found on the page
 		 * at load. These may be created by server-side
@@ -49,7 +49,7 @@
 			return $(target).find(settings.itemContainer).length;
 		}();
 
-		
+
 		/**
 		 * Add an element to the target
 		 * and call the callback function
@@ -72,6 +72,7 @@
 		var deleteOne = function (e) {
 			e.preventDefault();
 			settings.beforeDelete.call(this);
+      if (total === settings.min) return;
 			$(this).parents(settings.itemContainer).first().remove();
 			total--;
 			maintainAddBtn();
@@ -126,12 +127,12 @@
 			$("form").on("click", settings.deleteTrigger, deleteOne);
 
 			if (!total) {
-				var toCreate = settings.startWith - total;
+				var toCreate = settings.min - total;
 				for (var j = 0; j < toCreate; j++) {
 					createOne();
 				}
 			}
-			
+
 		})();
 	};
 
