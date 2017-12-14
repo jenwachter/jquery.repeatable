@@ -14,8 +14,8 @@
 			template: null,
 			itemContainer: ".field-group",
 			beforeAdd: function () {},
-			beforeDelete: function () {},
 			afterAdd: function (item) {},
+			beforeDelete: function (item) {},
 			afterDelete: function () {}
 		};
 
@@ -71,9 +71,10 @@
 		 */
 		var deleteOne = function (e) {
 			e.preventDefault();
-			settings.beforeDelete.call(this);
-      if (total === settings.min) return;
-			$(this).parents(settings.itemContainer).first().remove();
+			if (total === settings.min) return;
+			var item = $(this).parents(settings.itemContainer).first();
+			settings.beforeDelete.call(this, item);
+			item.remove();
 			total--;
 			maintainAddBtn();
 			settings.afterDelete.call(this);
