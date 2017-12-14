@@ -66,7 +66,7 @@ When a user clicks on the `.add` button, the script will render a new `.field-gr
 * __max__: _Optional_. (integer) The maximum number of field group elements that may be added to the repeatable item container. Default: null.
 * __min__: _Optional_. (integer) The minimum number of field group elements that may be present in the repeatable item container. The form is prepopulated with this amount of field group elements. Default: 0.
 * __beforeAdd__: _Optional_. (function) A function to run before an item is added to the repeatable item container. Default: none
-* __afterAdd__: _Optional_. (function) A function to run after an item is added to the repeatable item container. Default: none
 * __beforeDelete__: _Optional_. (function) A function to run before an item is deleted from the repeatable item container. Default: none
+* __afterAdd__: _Optional_. (function (addedItem)) A function to run after an item is added to the repeatable item container. Default: none
 * __afterDelete__: _Optional_. (function) A function to run after an item is deleted from the repeatable item container. Default: none
 * __template__: _Required_. (string) The selector that contains the form field group template.

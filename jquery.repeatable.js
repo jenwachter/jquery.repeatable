@@ -14,8 +14,8 @@
 			template: null,
 			itemContainer: ".field-group",
 			beforeAdd: function () {},
-			afterAdd: function () {},
 			beforeDelete: function () {},
+			afterAdd: function (item) {},
 			afterDelete: function () {}
 		};
 
@@ -59,8 +59,8 @@
 		var addOne = function (e) {
 			e.preventDefault();
 			settings.beforeAdd.call(this);
-			createOne();
-			settings.afterAdd.call(this);
+			var item = createOne();
+			settings.afterAdd.call(this, item);
 		};
 
 		/**
@@ -84,9 +84,11 @@
 		 * @return null
 		 */
 		var createOne = function() {
-			getUniqueTemplate().appendTo(target);
+			var item = getUniqueTemplate();
+			item.appendTo(target);
 			total++;
 			maintainAddBtn();
+			return item;
 		};
 
 		/**
