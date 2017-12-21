@@ -1,6 +1,6 @@
 {
   "name": "jquery.repeatable",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "A jQuery plugin that allows you to easily create repeatable groups of form fields.",
   "main": "jquery.repeatable.js",
   "directories": {
