@@ -14,9 +14,9 @@
     "url": "git+https://github.com/jenwachter/jquery.repeatable.git"
   },
   "author": "jenwachter",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jenwachter/jquery.repeatable/issues"
   },
-  "homepage": "https://github.com/jenwachter/jquery.repeatable#readme"
+  "homepage": "https://github.com/jenwachter/jquery.repeatable"
 }
