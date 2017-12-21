@@ -1,0 +1,22 @@
+{
+  "name": "jquery.repeatable",
+  "version": "0.4.0",
+  "description": "A jQuery plugin that allows you to easily create repeatable groups of form fields.",
+  "main": "jquery.repeatable.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenwachter/jquery.repeatable.git"
+  },
+  "author": "jenwachter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jenwachter/jquery.repeatable/issues"
+  },
+  "homepage": "https://github.com/jenwachter/jquery.repeatable"
+}
