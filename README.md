@@ -12,9 +12,9 @@ At a bare minimum, the html form should contain a container for which the repeat
 
 ```html
 <form>
-	<div class="repeatable-container"></div>
-	<input type="button" value="Add Person" class="add" />
-	<input type="submit" value="Submit" />
+  <div class="repeatable-container"></div>
+  <input type="button" value="Add Person" class="add" />
+  <input type="submit" value="Submit" />
 </form>
 ```
 
@@ -30,13 +30,13 @@ The field group template contains html for the group of form fields that will be
 ```html
 <script type="text/template" id="people">
 <div class="field-group">
-	<label for="firstname_{?}">First name</label>
-	<input type="text" name="firstname_{?}" value="" id="firstname_{?}" />
+  <label for="firstname_{?}">First name</label>
+  <input type="text" name="firstname_{?}" value="" id="firstname_{?}" />
 
-	<label for="lastname_{?}">First name</label>
-	<input type="text" name="lastname_{?}" value="" id="lastname_{?}" />
+  <label for="lastname_{?}">First name</label>
+  <input type="text" name="lastname_{?}" value="" id="lastname_{?}" />
 
-	<input type="button" class="delete" value="X" />
+  <input type="button" class="delete" value="X" />
 </div>
 </script>
 ```
@@ -48,9 +48,9 @@ The following JavaScript can be used in conjunction with the form and template s
 
 ```javascript
 $(function() {
-	$("form .repeatable-container").repeatable({
-		template: "#people"
-	});
+  $("form .repeatable-container").repeatable({
+    template: "#people"
+  });
 });
 ```
 When a user clicks on the `.add` button, the script will render a new `.field-group` within the `.repeatable-container`. Each `{?}` will be replaced with a unique value so that each field is unique in the scope of the form. If a user clicks on a `.delete` button within a group, that group will be removed from the form.
